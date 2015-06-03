@@ -20,8 +20,9 @@ class Particle2dDemo extends AbstractDemo
 		_clickArea.graphics.beginFill(0xeeeeee);
 		_clickArea.graphics.drawRect(0, 0, 100, 100);
 		_clickArea.useHandCursor = true;
-		_clickArea.addEventListener(MouseEvent.MOUSE_MOVE, onClick);
 		addChild(_clickArea);
+		
+		addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
 		
 		_particles = new Array<Particle>();
 		
@@ -35,7 +36,7 @@ class Particle2dDemo extends AbstractDemo
 		}
 	}
 	
-	private function onClick(e:MouseEvent):Void 
+	private function onMouseMove(e:MouseEvent):Void 
 	{
 		var mouseX:Float = this.mouseX / _width;
 		var mouseY:Float = this.mouseY / _height;

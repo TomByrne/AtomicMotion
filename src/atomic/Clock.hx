@@ -15,7 +15,7 @@ class Clock
 	
 	
 	public function new() {
-		
+		_fps = Math.NaN;
 	}
 	
 	private var _timer:Timer;
@@ -46,7 +46,7 @@ class Clock
 		if (_firstLink == null) {
 			_firstLink = link;
 			_lastLink = link;
-			if (Math.isNaN(_fps)) this.fps = Clock.defaultFps;
+			if (FastMath.isNaN(_fps)) this.fps = Clock.defaultFps;
 		}else {
 			_lastLink.after = link;
 			_lastLink = link;

@@ -179,6 +179,12 @@ class Motion{
 		if(!FastMath.isNaN(acceleration))this.acceleration = acceleration;
 		if (!FastMath.isNaN(decceleration)) this.decceleration = decceleration;
 		
+		_destination = Math.NaN;
+		_duration = Math.NaN;
+		_calcDuration = Math.NaN;
+		_rounding = Math.NaN;
+		_rounding2 = Math.NaN;
+		
 		if (onWorldClock) {
 			Clock.worldClock.addHandler(tick);
 		}
